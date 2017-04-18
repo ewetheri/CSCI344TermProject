@@ -68,15 +68,14 @@ div:hover:not(#wrapper):not(#header) {
 }
 
 #navbar ul {
-    width:50%;
-    margin: auto;
     list-style-type: none;
 }
 
 #navbar ul li {
+    text-align: center;
     display: block;
-    padding: 10px;
-    margin: 20px 0px;
+    padding: 5px;
+    margin: 50px 0px;
 }
 
 #main {
@@ -105,4 +104,25 @@ div:hover:not(#wrapper):not(#header) {
     padding: 25px;
     font-size: 12px;
     animation: mouseoff 2s ease-out 0s;
+}
+
+#scores {
+    margin:auto;
+    width: 90%;
+}
+
+#scores tr {
+    height: 25px;
+}
+
+#scores tr:nth-of-type(odd) {
+    background-color:#222222;
+}
+
+#scores tr:nth-of-type(even) {
+    background-color:#000000;
+}
+
+#scores th, td {
+    border-radius: 10px;
 }
