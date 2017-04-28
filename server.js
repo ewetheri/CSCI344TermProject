@@ -1,3 +1,4 @@
+(function() {
 var express = require('express'),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose');
@@ -34,10 +35,35 @@ app.get("/getScores", function(req, res) {
       console.log(score);
       res.json(score);
     }
-  }
-)
+    }).sort({experience: -1})
 });
 
 app.listen(3000, function(){
   console.log('Listening on Port 3000');
 });
+
+}());
+/*
+app.get("/getScores", function(req, res) {
+  Score.find(req.query, function(err, score) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(score);
+      res.json(score);
+    }
+  }
+)
+});
+
+app.get("/getScores", function(req, res) {
+  Score.find().sort({experience: -1}, function(err, score) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(score);
+      res.json(score);
+    }
+  }
+)
+});*/
