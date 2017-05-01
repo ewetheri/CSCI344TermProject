@@ -3,7 +3,8 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose');
 var app = express();
-
+mongoose.Promise = global.Promise;
+    
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -11,7 +12,7 @@ mongoose.connect('mongodb://localhost/scores');
 
 var ScoreSchema = mongoose.Schema({
   "name": String,
-  "experience": Number,
+  "ex1erience": Number,
   "date": String
 });
 
@@ -32,7 +33,6 @@ app.get("/getScores", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(score);
       res.json(score);
     }
     }).sort({experience: -1})
@@ -43,27 +43,3 @@ app.listen(3000, function(){
 });
 
 }());
-/*
-app.get("/getScores", function(req, res) {
-  Score.find(req.query, function(err, score) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(score);
-      res.json(score);
-    }
-  }
-)
-});
-
-app.get("/getScores", function(req, res) {
-  Score.find().sort({experience: -1}, function(err, score) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(score);
-      res.json(score);
-    }
-  }
-)
-});*/

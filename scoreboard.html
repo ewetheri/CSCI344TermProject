@@ -7,6 +7,11 @@
         <title>Abyss Scoreboard</title>
         <meta name="description" content="An interactive getting started guide for Brackets.">
         <link rel="stylesheet" href="main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script 
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js">
+        </script>
+        <script src="client.js"></script>
     </head>
     
     
@@ -30,29 +35,18 @@
             </ul>
         </div>
         
-        <div id = "main">
+        <div id = "main" ng-app="score" ng-controller="ScoreController">
             <h1>High Scores</h1>
+           
             <br>
-                <table id = "scores">
+                <table id = "scores" >
                     <tr>
                         <th>Name</th>
                         <th>Experience</th>
                         <th>Date</th>
-                    </tr>
-                    <tr>
-                        <td>Jimmy</td><td>7,938</td><td>4/5/15</td>
-                    </tr>
-                    <tr>
-                        <td>Jimmy</td><td>7,938</td><td>4/5/15</td>
-                    </tr>
-                    <tr>
-                        <td>Jimmy</td><td>7,938</td><td>4/5/15</td>
-                    </tr>
-                    <tr>
-                        <td>Jimmy</td><td>7,938</td><td>4/5/15</td>
-                    </tr>
-                    <tr>
-                        <td>Jimmy</td><td>7,938</td><td>4/5/15</td>
+                   
+                    <tr ng-repeat="s in scores">
+                        <td>{{s.name}}</td><td>{{s.experience}}</td><td>{{s.date}}</td>
                     </tr>
             </table>
         </div>
@@ -60,7 +54,7 @@
         <div id = "footer">
         
         </div>
-        
+      
     </body>
     
 </html>
