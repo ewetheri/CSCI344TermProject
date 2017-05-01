@@ -14,9 +14,9 @@
         $.getJSON('getScores', function(result) {
             
             $scope.scores = result;          
-            $scope.name = $scope.scores[0].name;         
+            /*$scope.name = $scope.scores[0].name;         
             $scope.experience = $scope.scores[0].experience;
-            $scope.date = $scope.scores[0].date;
+            $scope.date = $scope.scores[0].date;*/
             $scope.$apply();
         });
         
