@@ -11,9 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect('mongodb://localhost/scores');
 
 var ScoreSchema = mongoose.Schema({
-  "name": String,
-  "ex1erience": Number,
-  "date": String
+    "name": String,
+    "score": Number,
+    "floor": Number,
+    "level": Number,  
+    "date": String
 });
 
 var Score = mongoose.model("Score", ScoreSchema);
