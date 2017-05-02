@@ -1,7 +1,6 @@
 # CSCI344TermProject
 
-Abyss Scoreboard
-Created by Eric Wetherill, Ivan Seng, and Michael Seils.
+Abyss Scoreboard created by Eric Wetherill, Ivan Seng, and Michael Seils.
 
 HOW TO USE:
 1) Navigate to the "Game" page
