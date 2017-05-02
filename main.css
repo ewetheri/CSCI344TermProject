@@ -7,6 +7,7 @@
 
 body {
     background-color: #333333;
+    z-index: -1000000;
 }
 
 @keyframes mouseover {
@@ -20,16 +21,17 @@ body {
 }
 
 #corner {
+    background-color: #000000;
     display: inline-block;
     width: 170px;
     height: 110px;
     margin: 15px 5px 5px 15px;
     border-radius: 50px 10px;
-    background-color: #000000;
     animation: mouseoff 2s ease-out 0s;
+    z-index: 10;
 }
 
-div:hover:not(#wrapper):not(#header) {
+div:hover:not(#wrapper):not(#header):not(#cover):not(#line) {
     background-color:#222222;
     animation: mouseover 2s ease-out 0s;
 }
@@ -37,9 +39,11 @@ div:hover:not(#wrapper):not(#header) {
 #header {
     height: 130px;
     margin: 0px;
+    background-color: inherit;
 }
 
 #title {
+    background-color: #000000;
     display: inline-block;
     position:absolute;
     min-width: 400px;
@@ -47,24 +51,45 @@ div:hover:not(#wrapper):not(#header) {
     height: 60px;
     margin: 15px auto 5px 0px;
     border-radius: 10px 50px;
-    background-color: #000000;
     color: #FFFFFF;
     text-align: center;
     padding: 25px;
-    font-size: 36px;
+    font-size: 3em;
     animation: mouseoff 2s ease-out 0s;
+    z-index: 1;
+}
+
+#cover{
+    background-color: inherit;
+    height:15px;
+    position:absolute;
+    top:0px;
+    width:100%;
+    z-index: 10;
+}
+
+#line {
+    position: absolute;
+    height:1000px;
+    width:5px;
+    top:-1000px;
+    left:80px;
+    background-color:#000000;
+    z-index: -10000;
+    
 }
 
 #navbar {
+    background-color: #000000;
     position: fixed;
     left: 15px;
     width: 150px;
     height: 400px;
     border-radius: 10px 50px;
-    background-color: #000000;
     color: #FFFFFF;
     padding: 10px;
     animation: mouseoff 2s ease-out 0s;
+    z-index: 1;
 }
 
 #navbar ul {
@@ -79,50 +104,64 @@ div:hover:not(#wrapper):not(#header) {
 }
 
 #main {
+    z-index: 10;
+    background-color: #000000;
     min-width: 400px;
     width: 60%;
     height: 800px;
     margin: 0px auto 5px 190px;
     border-radius: 50px 10px;
-    background-color: #000000;
     color: #FFFFFF;
     text-align: center;
     padding: 25px;
-    font-size: 12px;
+    font-size: .9em;
     animation: mouseoff 2s ease-out 0s;
+}
+
+h1 {
+    font-size:1.5em;
+    font-weight: normal;
+    text-align:center;
+    margin-top:25px;
 }
 
 #footer {
+    z-index: 10;
+    background-color: #000000;
     min-width: 400px;
     width: 60%;
-    height: 80px;
-    margin: 5px auto 5px 190px;
+    height: 60px;
+    margin: 5px auto 50px 190px;
     border-radius: 10px 50px;
-    background-color: #000000;
     color: #FFFFFF;
     text-align: center;
     padding: 25px;
-    font-size: 12px;
+    font-size: 0.8em;
     animation: mouseoff 2s ease-out 0s;
 }
 
-#scores {
+table {
     margin:auto;
     width: 90%;
 }
 
-#scores tr {
-    height: 25px;
-}
-
-#scores tr:nth-of-type(odd) {
+table tr:nth-of-type(odd) {
     background-color:#222222;
 }
 
-#scores tr:nth-of-type(even) {
+table tr:nth-of-type(even) {
     background-color:#000000;
 }
 
-#scores th, td {
+table th, td {
     border-radius: 10px;
+    padding: 10px;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #777777;
 }
