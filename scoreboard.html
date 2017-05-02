@@ -18,6 +18,7 @@
     <body>
         
         <div id="header">
+            <div id="cover"></div>
             <div id="corner">
         
             </div>
@@ -26,12 +27,16 @@
             </div>
         </div>
         
+       
+        
+        
         <div id ="navbar">
+            <div id="line"></div>
             <ul>
-                <li>Home</li>
-                <li>Game</li>
-                <li>Scoreboard</li>
-                <li>About Us</li>
+                <a href='index.html'><li>Home</li></a>
+                <a href='game.html'><li>Game</li></a>
+                <a href='scoreboard.html'><li>Scoreboard</li></a>
+                <a href='about.html'><li>About Us</li></a>
             </ul>
         </div>
         
@@ -42,17 +47,24 @@
                 <table id = "scores" >
                     <tr>
                         <th>Name</th>
-                        <th>Experience</th>
+                        <th>Score</th>
+                        <th>Floor</th>
+                        <th>Level</th>
                         <th>Date</th>
                    
                     <tr ng-repeat="s in scores">
-                        <td>{{s.name}}</td><td>{{s.experience}}</td><td>{{s.date}}</td>
+                        <td>{{s.name}}</td><td>{{s.score}}</td>
+                        <td>{{s.floor}}</td>
+                        <td>{{s.level}}</td><td>{{s.date}}</td>
                     </tr>
             </table>
         </div>
         
         <div id = "footer">
-        
+            <p>UNCA CSCI 344</p>
+            <p>Mike Seils, Ivan Seng, Eric Wetherill</p>
+            <p>Professor Sheaffer</p>
+            <p>Spring 2017</p>
         </div>
       
     </body>
