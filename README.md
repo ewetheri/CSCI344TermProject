@@ -1,19 +1,12 @@
 # CSCI344TermProject
 
-HTML
---make about us
---make game page
+Abyss Scoreboard
+Created by Eric Wetherill, Ivan Seng, and Michael Seils.
 
-CSS
---nothing?
---Format game?
-
-JS
---client.js
-----angular to connect with scoreboard
---server.js
-
-
-.txt
---to commit data to scoreboard
+HOW TO USE:
+1) Navigate to the "Game" page
+2) Download the executable
+3) Run Abyss.exe (must be on a Windows machine)
+4) Have fun! Scores are recorded at the end of each play session
+5) View scores by navigating to the "Scoreboard" page
 
