@@ -40,6 +40,7 @@ div:hover:not(#wrapper):not(#header):not(#cover):not(#line) {
     height: 130px;
     margin: 0px;
     background-color: inherit;
+    z-index:-100;
 }
 
 #title {
@@ -69,13 +70,13 @@ div:hover:not(#wrapper):not(#header):not(#cover):not(#line) {
 }
 
 #line {
-    position: absolute;
-    height:1000px;
+    position: fixed;
+    height:500px;
+    top:-200px;
     width:5px;
-    top:-1000px;
-    left:80px;
+    left:90px;
     background-color:#000000;
-    z-index: -10000;
+    z-index: -10;
     
 }
 
