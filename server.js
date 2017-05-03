@@ -21,12 +21,16 @@ var ScoreSchema = mongoose.Schema({
 var Score = mongoose.model("Score", ScoreSchema);
 
 app.post("/addScore", function(req, res) {
-  var newScore = new Score(req.body);
-  newScore.save(function(err,res) {
+    var str = JSON.stringify(req.body).slice(2,-5).replace(/\\/g, '');
+    console.log(str);
+    
+    var newScore = new Score(JSON.parse(str));
+    newScore.save(function(err,result) {
+    
     if (err) {
       console.log(err);
-      res.send("Error");
-    } else res.send("Updated");
+      //result.send("Error");
+    } //else result.send("Updated");
   });
 });
 
@@ -45,3 +49,5 @@ app.listen(3000, function(){
 });
 
 }());
+
+
