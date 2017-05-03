@@ -114,7 +114,7 @@ button {
     background-color: #000000;
     min-width: 400px;
     width: 60%;
-    height: 600px;
+    height: auto;
     margin: 0px auto 5px 190px;
     border-radius: 50px 10px;
     color: #FFFFFF;
