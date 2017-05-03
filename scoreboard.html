@@ -29,9 +29,9 @@
         
        
         
-	<div id="line"></div>
+        
         <div id ="navbar">
-            
+            <div id="line"></div>
             <ul>
                 <a href='index.html'><li>Home</li></a>
                 <a href='game.html'><li>Game</li></a>
@@ -42,7 +42,8 @@
         
         <div id = "main" ng-app="score" ng-controller="ScoreController">
             <h1>High Scores</h1>
-           
+           <button ng-click="all()" id="all">All</button>
+            <button ng-click="ten()" id="ten">Top Ten</button>
             <br>
                 <table id = "scores" >
                     <tr>
