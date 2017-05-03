@@ -4,7 +4,7 @@ var express = require('express'),
   mongoose = require('mongoose');
 var app = express();
 mongoose.Promise = global.Promise;
-    
+
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -14,7 +14,7 @@ var ScoreSchema = mongoose.Schema({
     "name": String,
     "score": Number,
     "floor": Number,
-    "level": Number,  
+    "level": Number,
     "date": String
 });
 
@@ -23,10 +23,10 @@ var Score = mongoose.model("Score", ScoreSchema);
 app.post("/addScore", function(req, res) {
     var str = JSON.stringify(req.body).slice(2,-5).replace(/\\/g, '');
     console.log(str);
-    
+
     var newScore = new Score(JSON.parse(str));
     newScore.save(function(err,result) {
-    
+
     if (err) {
       console.log(err);
       //result.send("Error");
@@ -41,13 +41,22 @@ app.get("/getScores", function(req, res) {
     } else {
       res.json(score);
     }
-    }).sort({experience: -1})
+    }).sort({score: -1}).limit(10);
 });
+
+app.get("/getAll", function(req, res) {
+    Score.find(req.query, function(err, score) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(score);
+        }
+        }).sort({score: -1});
+    });
+
 
 app.listen(3000, function(){
   console.log('Listening on Port 3000');
 });
 
 }());
-
-
