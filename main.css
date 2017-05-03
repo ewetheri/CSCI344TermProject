@@ -46,6 +46,7 @@ div:hover:not(#wrapper):not(#header):not(#cover):not(#line) {
 button {
     border-radius: 5px;
     padding: 5px;
+    width:75px;
 }
 
 #title {
@@ -109,7 +110,28 @@ button {
     margin: 50px 0px;
 }
 
+img {
+    width:300px;
+    display:block;
+    border-radius:10px;
+}
+
+.imgleft {
+    float:left;
+}
+
+.imgright {
+    float:right;
+}
+
+.descriptionp {
+    float:clear;
+    padding-top:75px;
+    margin-bottom:100px;
+}
+
 #main {
+    position:relative;
     z-index: 10;
     background-color: #000000;
     min-width: 400px;
