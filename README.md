@@ -17,5 +17,7 @@ Special thanks to Michael Luney, Dylan Cromer, and Matthew Peek for their contri
 
 
 Work Log:
+
 -Encountered several issues when porting the web game to HTML5. Unreal Engine's HTML5 port is still experimental and frequently causes game-breaking errors that don't occur in other builds. This was ultimately solved by rebuilding the entire game in a different engine that would be downloaded by the user as an executable capable of connecting to the database remotely. The downside to this solutoin is that only a Windows build will be available. Game Maker: Studio was chosen as the new engine for it's quick development cycle and reliable HTTP/JSON handling.
+
 -JSON data being read in from the new game is in an unusual format. It is unclear whether this is an issue stemming from the game's output of the database's input. Regardless, measures were taken to make this unusual input usable despite its undesirable format.
