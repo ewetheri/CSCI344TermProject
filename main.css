@@ -43,6 +43,11 @@ div:hover:not(#wrapper):not(#header):not(#cover):not(#line) {
     z-index:-100;
 }
 
+button {
+    border-radius: 5px;
+    padding: 5px;
+}
+
 #title {
     background-color: #000000;
     display: inline-block;
@@ -109,7 +114,7 @@ div:hover:not(#wrapper):not(#header):not(#cover):not(#line) {
     background-color: #000000;
     min-width: 400px;
     width: 60%;
-    height: 800px;
+    height: 600px;
     margin: 0px auto 5px 190px;
     border-radius: 50px 10px;
     color: #FFFFFF;
