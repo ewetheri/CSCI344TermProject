@@ -2,7 +2,7 @@
 
 Abyss Scoreboard created by Eric Wetherill, Ivan Seng, and Michael Seils.
 
-HOW TO USE:
+#HOW TO USE:
 1) Navigate to the "Game" page.
 2) Download the executable file provided by the link.
 3) Run Abyss.exe (must be on a Windows machine).
@@ -16,13 +16,13 @@ Abyss is a 2D platformer game with roguelike and RPG elements created as a proje
 
 Special thanks to Michael Luney, Dylan Cromer, and Matthew Peek for their contributions to Abyss.
 
-Technologies Used:
+#Technologies Used:
 -HTML/CSS as the base graphics for the website. Used to create four pages: Home, Game Download, Scoreboard, and an About page.
 -Javascript/JQuery to pull the scoreboard data from the server and display it in-browser, as well as AngularJS to streamline updating the scoreboard (between top ten scores and all scores) without having to refresh the page.
 -MongoDB to hold the scoreboard data on the server in JSON format.
 -GameMaker to create a JSON-friendly version of the game that could talk to the database and work without crashing.
 
-Work Log:
+#Work Log:
 Initial goal was to host in-browser a game created in CSCI 373 game design course, as well as a scoreboard to track scoring of the game.
 
 Most of this goal was completed, with the largest setback being the repeated crashing and unwieldiness of the Unreal 4 version of the game. The game was redesigned in Game Maker, and is now required to download to play, and is played on the desktop instead of in-browser.
