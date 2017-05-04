@@ -25,3 +25,4 @@ Work Log:
 { '{ "name": "bob12", "level": 3.000000, "date": "11\/21\/17", "score": 64.000000, "floor": 9.000000 }': '' }
 The desired JSON object was being treated as the key of a key/value pair. Mongoose was not parsing the data correctly, so I converted it to a string and parsed it directly, slicing off the undesired outer edges and removing unwanted backslashes that were mysteriously being generated. (5/2/2017)
 
+The data from MongoDB was loading but not being rendered on the scoreboard page. It would render after two button clicks. The solution to this problem was the $scope.$apply() function, which causes bindings to update (4/28/2017)
