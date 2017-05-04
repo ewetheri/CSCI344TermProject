@@ -1,0 +1,180 @@
+Information about object: Score
+Sprite: 
+Solid: false
+Visible: true
+Depth: 0
+Persistent: false
+Parent: 
+Children: 
+Mask: 
+
+No Physics Object
+Create Event:
+
+execute code:
+
+///init
+log = "";
+games = -1;
+
+url = "http://localhost:3000";
+
+declick = 0;
+
+/*
+game_map = ds_map_create();
+
+ds_map_add(game_map,"name","bob");
+ds_map_add(game_map,"score",100);
+ds_map_add(game_map,"level",3);
+ds_map_add(game_map,"floor",5);
+ds_map_add(game_map,"date","05/02/17");
+
+json = json_encode(game_map);
+
+log += "json created#";
+
+if(file_exists("url.txt"))
+{
+    log += "url txt file found, reading...#";
+    
+    txt_file = file_text_open_read("url.txt");
+    url = file_text_readln(txt_file);
+    
+    log += "successfully read and loaded url, posting json...#";
+    
+    http_post_string(url,json);
+    
+    log += "json posted to " + url + "#";
+}
+else
+{
+    log += "posting json...#";
+    
+    http_post_string("http://localhost:8000",json);
+    
+    log += "json posted to localhost:8000#";
+}
+*/
+
+log += "press <enter> to create a json or <space> to randomly generate one#press <U> to change the target url#press <L> to print log file#";
+
+
+Step Event:
+
+execute code:
+
+///main
+if(keyboard_check_released(vk_space))
+{
+    declick = 30
+    
+    game[++games] = ds_map_create();
+    
+    ds_map_add(game[games],"name","bob"+string(games));
+    ds_map_add(game[games],"score",irandom(100));
+    ds_map_add(game[games],"level",irandom(10));
+    ds_map_add(game[games],"floor",irandom(10));
+    ds_map_add(game[games],"date",string(irandom(12)+1)+"/"+string(irandom(30))+"/17");
+    
+    json = json_encode(game[games]);
+    
+    log += "json created:#"+json+"#";
+    
+    log += "posting json...#";
+    
+    http_post_string(url,json);
+    
+    log += "json posted to " + url + "#";
+    
+    log += "press <enter> to create a json or <space> to randomly generate one#press <U> to change the target url#press <L> to print log file#";
+}
+else if(keyboard_check_released(vk_enter) && (declick = 0))
+{
+    declick = 30
+    
+    game[++games] = ds_map_create();
+    
+    name = get_string("Enter a name","bob"+string(games));
+    scor = get_integer("Enter a score",0);
+    levl = get_integer("Enter a level",0);
+    flor = get_integer("Enter a floor",0);
+    date = get_string("Enter a name","01/01/17");
+    
+    ds_map_add(game[games],"name",name);
+    ds_map_add(game[games],"score",scor);
+    ds_map_add(game[games],"level",levl);
+    ds_map_add(game[games],"floor",flor);
+    ds_map_add(game[games],"date",date);
+    
+    json = json_encode(game[games]);
+    
+    log += "json created:#"+json+"#";
+    
+    log += "posting json...#";
+    
+    http_post_string(url,json);
+    
+    log += "json posted to " + url + "#";
+    
+    log += "press <enter> to create a json or <space> to randomly generate one#press <U> to change the target url#press <L> to print log file#";
+}
+else if(keyboard_check_released(ord('U')))
+{
+    declick = 30
+    
+    url = get_string("Enter the url",url);
+    
+    log += "target url changed to " + url + "#";
+    
+    log += "press <enter> to create a json or <space> to randomly generate one#press <U> to change the target url#press <L> to print log file#";
+}
+else if(keyboard_check_released(ord('L')))
+{
+    declick = 30
+    
+    log_file = file_text_open_write("log.txt");
+    file_text_write_string(log_file,log);
+    file_text_close(log_file);
+    
+    log += "log file written to /AppData/Local/AbyssSimulation/log.txt#";
+    
+    log += "press <enter> to create a json or <space> to randomly generate one#press <U> to change the target url#press <L> to print log file#";
+}
+
+
+execute code:
+
+///declick handling
+if(declick > 0)
+    declick--;
+
+
+Async Event: HTTP:
+
+execute code:
+
+log += "http callback detected#"
+log += "id: " + string(ds_map_read(async_load,"id")) + "#";
+log += "status: " + string(ds_map_read(async_load,"status")) + "#";
+log += "result: " + string(ds_map_read(async_load,"result")) + "#";
+log += "url: " + string(ds_map_read(async_load,"url")) + "#";
+log += "http_status: " + string(ds_map_read(async_load,"http_status")) + "#";
+
+
+Draw Event:
+
+execute code:
+
+log_x = view_xview + 32;
+log_y = view_yview + 32;
+
+log_scroll = 0;
+
+while((log_y+string_height(log)) > (view_yview+view_hview-32))
+    log_y--;
+
+draw_set_color(c_red);
+draw_text(log_x,log_y,log);
+
+
