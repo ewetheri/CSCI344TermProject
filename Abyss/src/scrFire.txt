@@ -1,0 +1,14 @@
+if(wep = 1)
+{
+    with(instance_create(x,y,Swing))
+    {
+        creator = other;
+        dmg *= other.wep_dmge[other.wep];
+        image_angle = point_direction(x,y,mouse_x,mouse_y);
+        team = other.team;
+        snd_play(sndSwing);
+    }
+    swing *= -1;
+}
+
+

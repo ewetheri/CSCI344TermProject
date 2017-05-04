@@ -1,0 +1,13 @@
+//scrWeapons();
+//loads weapon data arrays
+
+wep_name[0] = "";
+wep_load[0] = 0;
+wep_dmge[0] = 0;
+wep_sprt[0] = sprNothing;
+
+wep_name[1] = "Short Sword";
+wep_load[1] = 10;
+wep_dmge[1] = 2;
+wep_sprt[1] = sprSword;
+

@@ -1,0 +1,12 @@
+//scrDrawBloom(x,y,size);
+
+draw_set_alpha(.2);
+draw_set_colour(c_black);
+
+draw_set_blend_mode(bm_src_color);
+
+for(i=8;i<argument2;i+=argument2/8)
+    draw_circle_colour(argument0+random(4)-2,argument1+random(4)-2,i+random(4)-2,c_white,c_white,0);
+
+draw_set_alpha(1);
+draw_set_blend_mode(bm_normal);

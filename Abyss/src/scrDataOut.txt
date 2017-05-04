@@ -1,0 +1,13 @@
+//scrDataOut();
+game = ds_map_create();
+
+ds_map_add(game,"name",data_name);
+ds_map_add(game,"score",data_score);
+ds_map_add(game,"level",data_level);
+ds_map_add(game,"floor",data_floor);
+ds_map_add(game,"date",data_date);
+
+json = json_encode(game);
+
+http_post_string(url,json);
+
