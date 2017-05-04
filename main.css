@@ -5,6 +5,11 @@
     text-decoration: none;
 }
 
+@font-face {
+    font-family:superk;
+    src: url(Supernatural_Knight.ttf);
+}
+
 body {
     background-color: #333333;
     z-index: -1000000;
@@ -41,6 +46,7 @@ div:hover:not(#wrapper):not(#header):not(#cover):not(#line) {
     margin: 0px;
     background-color: inherit;
     z-index:-100;
+    font-family:superk;
 }
 
 button {
@@ -126,7 +132,7 @@ img {
 
 .descriptionp {
     float:clear;
-    padding-top:75px;
+    padding-top:50px;
     margin-bottom:100px;
 }
 
